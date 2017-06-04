@@ -5,7 +5,9 @@
 ## This will Create Inverse Matrix
 
 makeCacheMatrix <- function(x = matrix()) {
+#Initialize Inv
     inv <- NULL
+#Function Definition
     set <- function(y) {
         x <<- y
         inv <<- NULL
@@ -21,6 +23,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## This will Cache Inversed Matrix
 
 cacheSolve <- function(x, ...) {
+#Assign Value to Inv
     inv <- x$getinv()
     if(!is.null(inv)) {
         message("getting cached data.")
@@ -29,5 +32,6 @@ cacheSolve <- function(x, ...) {
     data <- x$get()
     inv <- solve(data)
     x$setinv(inv)
+#Return Value 
     inv
 }
